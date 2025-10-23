@@ -1,4 +1,4 @@
-# wall_e
+# wall-e
 
 A new Flutter project.
 
