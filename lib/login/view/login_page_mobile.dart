@@ -10,42 +10,45 @@ class LoginPageMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocConsumer<LoginBloc, LoginState>(
-        listenWhen: (previousState, currentState) {
-          return currentState.status == ApiStatus.success;
-        },
-        listener: (context, state) {
-          if (state.status == ApiStatus.success) {
-            ScaffoldMessenger.of(
-              context,
-            ).showSnackBar(const SnackBar(content: Text('Login Successful')));
-          }
-        },
-        builder: (context, state) {
-          return state.status == ApiStatus.inProgress
-              ? const Center(child: CircularProgressIndicator())
-              : Align(
-                  alignment: const Alignment(0, -1 / 3),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        FlutterLogo(size: 120),
-                        const SizedBox(height: 16),
-                        _EmailInput(),
-                        const SizedBox(height: 8),
-                        _PasswordInput(),
-                        const SizedBox(height: 8),
-                        _LoginButton(),
-                        const SizedBox(height: 8),
-                        _GoogleLoginButton(),
-                        const SizedBox(height: 4),
-                        _SignUpButton(),
-                      ],
+      body: Padding(
+        padding: EdgeInsets.all(10),
+        child: BlocConsumer<LoginBloc, LoginState>(
+          listenWhen: (previousState, currentState) {
+            return currentState.status == ApiStatus.success;
+          },
+          listener: (context, state) {
+            if (state.status == ApiStatus.success) {
+              ScaffoldMessenger.of(
+                context,
+              ).showSnackBar(const SnackBar(content: Text('Login Successful')));
+            }
+          },
+          builder: (context, state) {
+            return state.status == ApiStatus.inProgress
+                ? const Center(child: CircularProgressIndicator())
+                : Align(
+                    alignment: const Alignment(0, -1 / 3),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          FlutterLogo(size: 120),
+                          const SizedBox(height: 16),
+                          _EmailInput(),
+                          const SizedBox(height: 8),
+                          _PasswordInput(),
+                          const SizedBox(height: 8),
+                          _LoginButton(),
+                          const SizedBox(height: 8),
+                          _GoogleLoginButton(),
+                          const SizedBox(height: 4),
+                          _SignUpButton(),
+                        ],
+                      ),
                     ),
-                  ),
-                );
-        },
+                  );
+          },
+        ),
       ),
     );
   }
@@ -92,13 +95,8 @@ class _PasswordInput extends StatelessWidget {
 class _LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final bool isValid = context.select(
-      (LoginBloc bloc) =>
-          bloc.state.email.isNotEmpty &&
-          bloc.state.password.isNotEmpty &&
-          bloc.state.passwordErrorMessage == null &&
-          bloc.state.emailErrorMessage == null,
-    );
+
+    final bool isValid = context.read<LoginBloc>().state.isValid;
 
     return ElevatedButton(
       key: const Key('loginForm_continue_raisedButton'),
@@ -131,7 +129,7 @@ class _GoogleLoginButton extends StatelessWidget {
         backgroundColor: theme.colorScheme.secondary,
       ),
       icon: const Icon(FontAwesomeIcons.google, color: Colors.white),
-      onPressed: () => context.read<LoginBloc>().add(LoginWithGoogle())
+      onPressed: () => context.read<LoginBloc>().add(LoginWithGoogle()),
     );
   }
 }
