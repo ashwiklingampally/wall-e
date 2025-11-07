@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wall_e/utils/api_status.dart';
 
 import '../../domain/repository/authentication_repository.dart';
@@ -14,5 +15,10 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     required String password,
   }) async {
     return remoteSource.login(email: email, password: password);
+  }
+
+  @override
+  Future<User?> googleLogIn() async {
+    return remoteSource.googleLogin();
   }
 }
