@@ -1,13 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:wall_e/login/bloc/login_bloc.dart';
 import 'package:wall_e/login/login_page_parent.dart';
+import 'package:wall_e/utils/firebase_options.dart' show DefaultFirebaseOptions;
 import 'di/di.dart' as di;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await di.setupDependencies();
 
   runApp(
