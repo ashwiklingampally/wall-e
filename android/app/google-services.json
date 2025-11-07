@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "181738863168",
-    "project_id": "flutter-full-94539",
-    "storage_bucket": "flutter-full-94539.firebasestorage.app"
+    "project_number": "609557732619",
+    "project_id": "wall-e-d808d",
+    "storage_bucket": "wall-e-d808d.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:181738863168:android:6bc64f6709fe8b11db7da5",
+        "mobilesdk_app_id": "1:609557732619:android:4f8414b39aaafb8488d60e",
         "android_client_info": {
           "package_name": "com.example.wall_e"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDqxpugG_8ZrK5AAfNRQMH5Te36gLGWHRI"
+          "current_key": "AIzaSyDTsxXT7WOzEUbVmg1Txd3i4MsN4F3Q5I0"
         }
       ],
       "services": {

@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDjpA9Can-ImfC-ZqnmMx3fI0MiJYKCkgE</string>
+	<string>AIzaSyAmEE9IGHp_G_zkfcKTOUBIa1_v8nnOrx4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>181738863168</string>
+	<string>609557732619</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.walle</string>
 	<key>PROJECT_ID</key>
-	<string>flutter-full-94539</string>
+	<string>wall-e-d808d</string>
 	<key>STORAGE_BUCKET</key>
-	<string>flutter-full-94539.firebasestorage.app</string>
+	<string>wall-e-d808d.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:181738863168:ios:88c95a638081724fdb7da5</string>
+	<string>1:609557732619:ios:29f13ee9f1c13f2988d60e</string>
 </dict>
 </plist>

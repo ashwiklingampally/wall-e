@@ -41,7 +41,7 @@ class AuthenticationRemoteDataSourceImpl implements AuthenticationRemoteDataSour
   @override
   Future<User?> googleLogin() async {
       try {
-        late final firebase_auth.AuthCredential credential;
+        late final AuthCredential credential;
         if (kIsWeb) {
           final googleProvider = firebase_auth.GoogleAuthProvider();
           final userCredential = await firebaseAuth.signInWithPopup(
@@ -49,10 +49,9 @@ class AuthenticationRemoteDataSourceImpl implements AuthenticationRemoteDataSour
           );
           credential = userCredential.credential!;
         } else {
-          final googleUser = await googleSignIn.signIn();
-          final googleAuth = await googleUser!.authentication;
+          final googleUser = await googleSignIn.authenticate(scopeHint: ["email"]);
+          final googleAuth =  googleUser.authentication;
           credential = firebase_auth.GoogleAuthProvider.credential(
-            accessToken: googleAuth.accessToken,
             idToken: googleAuth.idToken,
           );
         }

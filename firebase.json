@@ -3,17 +3,17 @@
     "platforms": {
       "android": {
         "default": {
-          "projectId": "flutter-full-94539",
-          "appId": "1:181738863168:android:6bc64f6709fe8b11db7da5",
+          "projectId": "wall-e-d808d",
+          "appId": "1:609557732619:android:4f8414b39aaafb8488d60e",
           "fileOutput": "android/app/google-services.json"
         }
       },
       "dart": {
         "lib/firebase_options.dart": {
-          "projectId": "flutter-full-94539",
+          "projectId": "wall-e-d808d",
           "configurations": {
-            "android": "1:181738863168:android:6bc64f6709fe8b11db7da5",
-            "web": "1:181738863168:web:3a141940ca96d434db7da5"
+            "android": "1:609557732619:android:4f8414b39aaafb8488d60e",
+            "web": "1:609557732619:web:fbfcdb53ddafd6c088d60e"
           }
         }
       }

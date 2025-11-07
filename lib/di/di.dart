@@ -19,7 +19,7 @@ Future<void> setupDependencies() async {
     () => AuthenticationRemoteDataSourceImpl(
       dioClient: sl(),
       firebaseAuth: FirebaseAuth.instance,
-      googleSignIn: GoogleSignIn()
+      googleSignIn: GoogleSignIn.instance
     ),
   );
   sl.registerLazySingleton(() => DioClient());
